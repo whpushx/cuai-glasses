@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | see you AI - Enterprise AI Wearables</title>
+    <meta name="description" content="Get in touch with see you AI for custom AI wearable solutions for your enterprise.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { navy: '#0F172A', blue: '#38BDF8', slate: '#64748B' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="i18n.js"></script>
+</head>
+
+<body class="bg-brand-navy text-white font-sans antialiased overflow-x-hidden pt-20">
+
+    <!-- Global Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 glass-nav border-b border-brand-slate/20 transition-all duration-300 shadow-lg bg-brand-navy/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-bold tracking-tighter text-white">see you AI</a>
+                </div>
+                <!-- Center Links -->
+                <div class="hidden md:flex flex-1 justify-center space-x-8">
+                    <a href="index.html"
+                        class="nav-link text-gray-300 hover:text-brand-blue transition-colors text-sm font-medium"
+                        data-i18n="nav_home">Home</a>
+                    <a href="about.html"
+                        class="nav-link text-gray-300 hover:text-brand-blue transition-colors text-sm font-medium"
+                        data-i18n="nav_about">About Us</a>
+                    <a href="services.html"
+                        class="nav-link text-gray-300 hover:text-brand-blue transition-colors text-sm font-medium"
+                        data-i18n="nav_services">Services</a>
+                    <a href="contact.html" class="nav-link text-brand-blue transition-colors text-sm font-medium"
+                        data-i18n="nav_contact">Contact</a>
+                </div>
+                <!-- Lang Toggle -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 border-white/20 pl-4">
+                        <button class="lang-toggle-btn text-xs font-bold transition-colors" data-lang="en">EN</button>
+                        <span class="text-gray-500 text-xs">/</span>
+                        <button class="lang-toggle-btn text-xs font-bold transition-colors opacity-60"
+                            data-lang="zh">中</button>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 border-r border-white/20 pr-4">
+                        <button class="lang-toggle-btn text-xs font-bold transition-colors" data-lang="en">EN</button>
+                        <span class="text-gray-500 text-xs">/</span>
+                        <button class="lang-toggle-btn text-xs font-bold transition-colors opacity-60"
+                            data-lang="zh">中</button>
+                    </div>
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-brand-slate/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-brand-blue hover:bg-white/5"
+                    data-i18n="nav_home">Home</a>
+                <a href="about.html"
+                    class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-brand-blue hover:bg-white/5"
+                    data-i18n="nav_about">About Us</a>
+                <a href="services.html"
+                    class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-brand-blue hover:bg-white/5"
+                    data-i18n="nav_services">Services</a>
+                <a href="contact.html"
+                    class="nav-link block px-3 py-2 rounded-md text-base font-medium text-brand-blue hover:bg-white/5"
+                    data-i18n="nav_contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="relative pt-24 pb-16 lg:pt-32 lg:pb-24 border-b border-brand-slate/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 animate-fade-in-up"
+                data-i18n="contact_hero_title">Get in Touch</h1>
+            <p class="text-xl text-brand-slate max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.1s;"
+                data-i18n="contact_hero_sub">We'd love to hear from you. Discover how we can customize AI wearables for
+                your enterprise.</p>
+        </div>
+        <div
+            class="absolute inset-0 top-0 w-full h-full bg-gradient-to-b from-brand-blue/10 to-transparent pointer-events-none">
+        </div>
+    </header>
+
+    <!-- Contact Layout -->
+    <section class="py-20 relative">
+        <div
+            class="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-blue/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-2xl mx-auto glass-panel p-10 md:p-16 rounded-3xl border border-white/10 shadow-2xl animate-fade-in-up flex flex-col items-center"
+                style="animation-delay: 0.2s;">
+                <h2 class="text-3xl font-bold mb-10 text-white flex items-center gap-4">
+                    <span class="w-2 h-8 bg-brand-blue rounded-full"></span>
+                    <span data-i18n="contact_info_title">Contact Information</span>
+                </h2>
+
+                <div class="w-full space-y-10">
+                    <!-- Email -->
+                    <div
+                        class="flex items-center gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-blue/30 transition-colors">
+                        <div
+                            class="w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center border border-brand-blue/20 flex-shrink-0">
+                            <svg class="w-7 h-7 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-brand-slate uppercase font-bold tracking-wider mb-1">Email Use</p>
+                            <p class="text-xl font-semibold text-white" data-i18n="footer_info1">info@cuai.ai</p>
+                        </div>
+                    </div>
+
+                    <!-- WeChat -->
+                    <div
+                        class="flex flex-col items-center p-8 rounded-2xl bg-white/5 border border-white/10 text-center hover:border-brand-blue/30 transition-colors">
+                        <div
+                            class="w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center border border-brand-blue/20 mb-4">
+                            <svg class="w-7 h-7 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </div>
+                        <p class="text-sm text-brand-slate uppercase font-bold tracking-wider mb-4"
+                            data-i18n="footer_scan">Scan WeChat</p>
+                        <div class="w-40 h-40 bg-white/10 rounded-2xl border border-brand-blue/20 p-2 shadow-2xl">
+                            <img src="assets/images/wechat-qr.png" alt="WeChat QR"
+                                class="w-full h-full object-contain bg-white rounded-xl shadow-md">
+                        </div>
+                        <p class="text-sm text-gray-400 mt-4" data-i18n="footer_scan_desc">Scan to add customer service
+                            WeChat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#080d1a] border-t border-white/10 pt-10 pb-10 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-brand-slate">
+            <p data-i18n="footer_rights">&copy; 2026 see you AI - Enterprise Wearables. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

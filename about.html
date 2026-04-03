@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | see you AI - Enterprise AI Wearables</title>
+    <meta name="description" content="Learn about our mission to bridge the gap between AI hardware and human vision.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { navy: '#0F172A', blue: '#38BDF8', slate: '#64748B' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="i18n.js"></script>
+</head>
+
+<body class="bg-brand-navy text-white font-sans antialiased overflow-x-hidden pt-20">
+
+    <!-- Global Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 glass-nav border-b border-brand-slate/20 transition-all duration-300 shadow-lg bg-brand-navy/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-bold tracking-tighter text-white">see you AI</a>
+                </div>
+                <!-- Center Links -->
+                <div class="hidden md:flex flex-1 justify-center space-x-8">
+                    <a href="index.html"
+                        class="nav-link text-gray-300 hover:text-brand-blue transition-colors text-sm font-medium"
+                        data-i18n="nav_home">Home</a>
+                    <a href="about.html" class="nav-link text-brand-blue transition-colors text-sm font-medium"
+                        data-i18n="nav_about">About Us</a>
+                    <a href="services.html"
+                        class="nav-link text-gray-300 hover:text-brand-blue transition-colors text-sm font-medium"
+                        data-i18n="nav_services">Services</a>
+                    <a href="contact.html"
+                        class="nav-link text-gray-300 hover:text-brand-blue transition-colors text-sm font-medium"
+                        data-i18n="nav_contact">Contact</a>
+                </div>
+                <!-- Lang Toggle -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 border-white/20 pl-4">
+                        <button class="lang-toggle-btn text-xs font-bold transition-colors" data-lang="en">EN</button>
+                        <span class="text-gray-500 text-xs">/</span>
+                        <button class="lang-toggle-btn text-xs font-bold transition-colors opacity-60"
+                            data-lang="zh">中</button>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 border-r border-white/20 pr-4">
+                        <button class="lang-toggle-btn text-xs font-bold transition-colors" data-lang="en">EN</button>
+                        <span class="text-gray-500 text-xs">/</span>
+                        <button class="lang-toggle-btn text-xs font-bold transition-colors opacity-60"
+                            data-lang="zh">中</button>
+                    </div>
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-brand-slate/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-brand-blue hover:bg-white/5"
+                    data-i18n="nav_home">Home</a>
+                <a href="about.html"
+                    class="nav-link block px-3 py-2 rounded-md text-base font-medium text-brand-blue hover:bg-white/5"
+                    data-i18n="nav_about">About Us</a>
+                <a href="services.html"
+                    class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-brand-blue hover:bg-white/5"
+                    data-i18n="nav_services">Services</a>
+                <a href="contact.html"
+                    class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-brand-blue hover:bg-white/5"
+                    data-i18n="nav_contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <!-- Hero Header -->
+    <header class="relative pt-24 pb-16 lg:pt-32 lg:pb-24 border-b border-brand-slate/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 animate-fade-in-up"
+                data-i18n="about_hero_title">Our Story</h1>
+            <p class="text-xl text-brand-slate max-w-3xl mx-auto animate-fade-in-up" style="animation-delay: 0.1s;"
+                data-i18n="about_hero_sub">Bridging the Gap Between AI Hardware and Human Vision.</p>
+        </div>
+        <div
+            class="absolute inset-0 top-0 w-full h-full bg-gradient-to-b from-brand-blue/10 to-transparent pointer-events-none">
+        </div>
+    </header>
+
+    <!-- Mission & Main About -->
+    <section class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+                <!-- Text side -->
+                <div>
+                    <div class="space-y-12 text-brand-slate leading-relaxed text-sm md:text-base">
+                        <!-- Vision -->
+                        <div class="animate-fade-in-up" style="animation-delay: 0.2s;">
+                            <h3 class="text-white text-xl font-semibold mb-4 border-l-4 border-brand-blue pl-4 py-1"
+                                data-i18n="about_p1_title">The Vision Behind the Name</h3>
+                            <p class="mb-4" data-i18n="about_p1_body">At see you AI, we believe that the most advanced
+                                technology shouldn't feel like a cold piece of hardware—it should feel like an extension
+                                of yourself. Our name carries a dual promise:</p>
+                            <ul class="space-y-4 list-none pl-5 bg-white/5 p-6 rounded-xl border border-white/10">
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 w-2 h-2 rounded-full bg-brand-blue flex-shrink-0"></div>
+                                    <p><strong class="text-white text-base block mb-1" data-i18n="about_p1_b1">"CU"
+                                            stands for "See You":</strong> <span data-i18n="about_p1_t1">It represents
+                                            the breakthrough in AI optical technology. We see the future of work, and
+                                            more importantly, we ensure that you and your team see the world clearly
+                                            through the lenses of tomorrow.</span></p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 w-2 h-2 rounded-full bg-brand-blue flex-shrink-0"></div>
+                                    <p><strong class="text-white text-base block mb-1" data-i18n="about_p1_b2">"CU"
+                                            stands for "Custom":</strong> <span data-i18n="about_p1_t2">It reflects our
+                                            core mission. In a world of mass-produced gadgets, we provide the "last
+                                            mile" of customization—from precision-grade prescription lenses to bespoke
+                                            corporate identity integration.</span></p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Why We Exist -->
+                        <div class="animate-fade-in-up" style="animation-delay: 0.3s;">
+                            <h3 class="text-white text-xl font-semibold mb-4 border-l-4 border-brand-blue pl-4 py-1"
+                                data-i18n="about_p2_title">Why We Exist</h3>
+                            <p class="mb-4" data-i18n="about_p2_body1">As the AI wearable revolution of 2026 unfolds, a
+                                significant gap has emerged. While tech giants are perfecting the chips and sensors of
+                                AI glasses and smart rings, the "human" side is often overlooked.</p>
+                            <div class="relative pl-6 border-l border-brand-slate/50 py-2 mb-4">
+                                <p class="text-white italic" data-i18n="about_p2_body2">How does a near-sighted engineer
+                                    use AR glasses effectively? How does a luxury brand provide its VIPs with a
+                                    high-tech gift that still feels exclusive? How does a logistics firm manage a fleet
+                                    of 500 devices across three continents?</p>
+                            </div>
+                            <p class="font-bold text-brand-blue text-lg" data-i18n="about_p2_body3">That is where see you AI
+                                steps in.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image side -->
+                <div class="relative lg:sticky lg:top-32 animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="absolute inset-0 bg-brand-blue/30 blur-[100px] rounded-full"></div>
+                    <img src="assets/images/tech_integration.jpg"
+                        alt="Technology Integration"
+                        class="relative z-10 rounded-2xl border border-white/20 shadow-2xl w-full object-cover">
+
+                    <div
+                        class="absolute -bottom-6 -left-6 bg-brand-navy/80 backdrop-blur-xl border border-white/20 p-5 rounded-2xl flex items-center gap-4 z-20 shadow-xl hidden md:flex">
+                        <div class="bg-brand-blue/20 p-4 rounded-xl text-brand-blue">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-lg" data-i18n="about_float_1">Human Vision</p>
+                            <p class="text-brand-slate text-sm" data-i18n="about_float_2">Bridging the gap</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Grid -->
+    <section class="py-20 relative bg-black/40 border-t border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="about_why_title">Why Choose see you AI?</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-brand-blue/30 transition-colors">
+                    <div class="w-14 h-14 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="about_why_1_title">Unmatched Precision</h3>
+                    <p class="text-brand-slate" data-i18n="about_why_1_body">Surgical-grade optics and exact
+                        calibration.</p>
+                </div>
+
+                <div
+                    class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-brand-blue/30 transition-colors">
+                    <div class="w-14 h-14 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="about_why_2_title">Global Scale</h3>
+                    <p class="text-brand-slate" data-i18n="about_why_2_body">Handling fleets from 10 to 10,000 devices.
+                    </p>
+                </div>
+
+                <div
+                    class="glass-panel p-8 rounded-2xl border border-white/10 hover:border-brand-blue/30 transition-colors">
+                    <div class="w-14 h-14 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="about_why_3_title">Premium Experience</h3>
+                    <p class="text-brand-slate" data-i18n="about_why_3_body">Luxury branding and bespoke packaging for
+                        every unit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Content -->
+    <section class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-brand-slate leading-relaxed text-center">
+                <h3 class="text-white text-2xl font-bold mb-6" data-i18n="about_mission_title">Our Mission</h3>
+                <p class="text-lg mb-8" data-i18n="about_mission_body">To provide the 'last mile' of customization for
+                    enterprise AI wearables, ensuring technology adapts to the user seamlessly.</p>
+
+                <h3 class="text-white text-2xl font-bold mb-6" data-i18n="about_p4_title">Our Commitment</h3>
+                <div
+                    class="bg-gradient-to-r from-brand-blue/5 via-brand-blue/10 to-brand-blue/5 p-8 rounded-2xl border border-brand-blue/20">
+                    <p class="text-white text-lg" data-i18n="about_p4_body">Based on the pillars of Vision and
+                        Precision, see you AI is dedicated to the belief that technology should adapt to the user, not the
+                        other way around. Whether you are a startup equipping your first team or a Fortune 500 company
+                        scaling a global AI deployment, we are here to make sure you See the Future Clearly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-[#080d1a] border-t border-white/10 pt-20 pb-10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+
+            <div class="flex flex-col items-center justify-center mb-16">
+                <!-- Branding -->
+                <div class="mb-8">
+                    <a href="index.html" class="text-4xl font-bold tracking-tighter text-white">see you AI</a>
+                    <p class="text-brand-slate text-sm mt-3 max-w-sm mx-auto" data-i18n="footer_slogan">Cu (See You) for
+                        Vision. Cu (Custom) for Excellence. Seeing the Future Clearly.</p>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-8 lg:gap-16">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 mb-4 transition-transform hover:scale-110">
+                            <svg class="w-6 h-6 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <span class="text-gray-300 text-sm font-medium" data-i18n="footer_info1">info@cuai.ai</span>
+                    </div>
+
+                    <!-- WeChat QR / Follow us -->
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-24 h-24 bg-white/10 rounded-xl border border-white/20 flex flex-col items-center justify-center relative group mb-3">
+                            <img src="assets/images/wechat-qr.png" alt="WeChat QR"
+                                class="w-full h-full object-contain bg-white rounded-xl p-1 shadow-md">
+                        </div>
+                        <div class="text-xs text-brand-blue font-semibold uppercase tracking-wider"
+                            data-i18n="footer_scan">Scan WeChat</div>
+                        <div class="text-xs text-brand-slate mt-1 max-w-[150px]" data-i18n="footer_scan_desc">Scan to
+                            add customer service WeChat.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- legal -->
+            <div
+                class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-brand-slate">
+                <p data-i18n="footer_rights">&copy; 2026 see you AI - Enterprise Wearables. All rights reserved.</p>
+                <div class="space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-brand-blue transition-colors" data-i18n="footer_privacy">Privacy
+                        Policy</a>
+                    <a href="#" class="hover:text-brand-blue transition-colors" data-i18n="footer_terms">Terms of
+                        Service</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

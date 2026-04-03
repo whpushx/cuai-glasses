@@ -1,35 +1,334 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CUAI | See You AI - 智能眼镜定制</title>
-    <style>
-        body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #050505; color: #f0f0f0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; overflow: hidden; }
-        .container { max-width: 800px; padding: 50px; background: rgba(20, 20, 20, 0.8); border-radius: 16px; box-shadow: 0 10px 40px rgba(0, 255, 200, 0.1); border: 1px solid #333; backdrop-filter: blur(10px); }
-        .logo-text { font-size: 3.5em; font-weight: 800; margin-bottom: 10px; letter-spacing: 2px; background: linear-gradient(90deg, #00f2fe, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .subtitle { font-size: 1.4em; color: #a0a0a0; margin-bottom: 40px; font-weight: 300; letter-spacing: 5px; }
-        .content { line-height: 1.8; color: #d0d0d0; text-align: justify; margin-bottom: 30px; font-size: 1.1em; }
-        .badge { display: inline-block; padding: 8px 16px; background: #111; border: 1px solid #4facfe; color: #4facfe; border-radius: 30px; font-size: 0.9em; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;}
-        .footer { margin-top: 50px; font-size: 0.85em; color: #666; }
-    </style>
+    <title>see you AI | Custom AI Glasses & Smart Ring B2B Solutions</title>
+    <meta name="description"
+        content="Enterprise-grade accessories and services for AI wearables. We offer prescription lens fitting, laser engraving, and fleet management for AI glasses.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { navy: '#0F172A', blue: '#38BDF8', slate: '#64748B' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="i18n.js"></script>
 </head>
-<body>
-    <div class="container">
-        <div class="badge">Next-Gen Wearable Vision</div>
-        <div class="logo-text">CUAI</div>
-        <div class="subtitle">See You AI · 遇见未来的你</div>
-        
-        <div class="content">
-            <p><strong>[EN]</strong> Welcome to CUAI (See You AI). We are a hardware design lab dedicated to the ultimate customization of smart glasses. By combining ergonomic engineering with cutting-edge visual displays, we create wearable devices tailored specifically for your lifestyle. Our domestic service portal (cuai.cloud) is currently undergoing official registration and will launch soon.</p>
-            
-            <p><strong>[中文]</strong> 欢迎来到 CUAI (See You AI)。我们是一家专注于智能眼镜极致定制的硬件设计实验室。通过将人体工程学与前沿视觉显示技术相结合，我们致力于为您打造专属的可穿戴视觉设备。我们面向国内用户的服务入口（cuai.cloud）目前正在进行合规备案，即将正式上线，敬请期待。</p>
+
+<body class="bg-brand-navy text-white font-sans antialiased overflow-x-hidden pt-20">
+
+    <!-- Global Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 glass-nav border-b border-brand-slate/20 transition-all duration-300 shadow-lg bg-brand-navy/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-bold tracking-tighter text-white">see you AI</a>
+                </div>
+                <!-- Center Links -->
+                <div class="hidden md:flex flex-1 justify-center space-x-8">
+                    <a href="index.html" class="nav-link text-brand-blue transition-colors text-sm font-medium"
+                        data-i18n="nav_home">Home</a>
+                    <a href="about.html"
+                        class="nav-link text-gray-300 hover:text-brand-blue transition-colors text-sm font-medium"
+                        data-i18n="nav_about">About Us</a>
+                    <a href="services.html"
+                        class="nav-link text-gray-300 hover:text-brand-blue transition-colors text-sm font-medium"
+                        data-i18n="nav_services">Services</a>
+                    <a href="contact.html"
+                        class="nav-link text-gray-300 hover:text-brand-blue transition-colors text-sm font-medium"
+                        data-i18n="nav_contact">Contact</a>
+                </div>
+                <!-- Lang Toggle -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 border-white/20 pl-4">
+                        <button class="lang-toggle-btn text-xs font-bold transition-colors" data-lang="en">EN</button>
+                        <span class="text-gray-500 text-xs">/</span>
+                        <button class="lang-toggle-btn text-xs font-bold transition-colors opacity-60"
+                            data-lang="zh">中</button>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 border-r border-white/20 pr-4">
+                        <button class="lang-toggle-btn text-xs font-bold transition-colors" data-lang="en">EN</button>
+                        <span class="text-gray-500 text-xs">/</span>
+                        <button class="lang-toggle-btn text-xs font-bold transition-colors opacity-60"
+                            data-lang="zh">中</button>
+                    </div>
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
-        
-        <div class="footer">
-            &copy; 2026 CUAI (See You AI) Smart Vision Lab. All rights reserved.<br>
-            Focusing exclusively on wearable optical hardware customization.
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-brand-slate/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="nav-link block px-3 py-2 rounded-md text-base font-medium text-brand-blue hover:bg-white/5"
+                    data-i18n="nav_home">Home</a>
+                <a href="about.html"
+                    class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-brand-blue hover:bg-white/5"
+                    data-i18n="nav_about">About Us</a>
+                <a href="services.html"
+                    class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-brand-blue hover:bg-white/5"
+                    data-i18n="nav_services">Services</a>
+                <a href="contact.html"
+                    class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-brand-blue hover:bg-white/5"
+                    data-i18n="nav_contact">Contact</a>
+            </div>
         </div>
-    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-blue/20 rounded-full blur-[120px] opacity-50 pointer-events-none">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left">
+                <div class="inline-flex items-center px-3 py-1 rounded-full border border-brand-blue/30 bg-brand-blue/10 text-brand-blue text-xs font-semibold tracking-wide uppercase mb-6 animate-fade-in-up"
+                    style="animation-delay: 0.1s;">
+                    <span class="w-2 h-2 rounded-full bg-brand-blue mr-2 animate-pulse"></span>
+                    <span data-i18n="hero_tag">Enterprise AI Wearables</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-fade-in-up"
+                    style="animation-delay: 0.2s;">
+                    <span data-i18n="hero_title_1">See the </span><span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-teal-300"
+                        data-i18n="hero_title_future">Future.</span><br>
+                    <span data-i18n="hero_title_2">Custom for Your Business.</span>
+                </h1>
+                <p class="mt-4 text-lg md:text-xl text-brand-slate mb-8 max-w-2xl mx-auto lg:mx-0 animate-fade-in-up"
+                    style="animation-delay: 0.3s;" data-i18n="hero_sub">
+                    The world's first B2B platform dedicated to AI wearable integration—from professional prescription
+                    lens fitting to bespoke corporate branding.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up"
+                    style="animation-delay: 0.4s;">
+                    <a href="services.html"
+                        class="px-8 py-3.5 rounded-full bg-brand-blue text-brand-navy font-semibold hover:bg-sky-300 transition-colors shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:shadow-[0_0_30px_rgba(56,189,248,0.6)] text-center"
+                        data-i18n="hero_btn_explore">Explore Solutions</a>
+                </div>
+            </div>
+            <div class="relative mt-10 lg:mt-0 animate-fade-in-up" style="animation-delay: 0.3s;">
+                <div
+                    class="relative rounded-2xl overflow-hidden glass-border p-2 bg-gradient-to-b from-white/10 to-transparent">
+                    <img src="assets/images/hero_glasses.jpg" alt="High-tech AI Glasses"
+                        class="rounded-xl w-full object-cover h-[400px] lg:h-[500px] filter contrast-125 brightness-90">
+                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-brand-navy to-transparent">
+                    </div>
+                    <div
+                        class="absolute top-8 right-8 glass-panel border border-white/20 p-3 rounded-xl backdrop-blur-md animate-float flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+                        <span class="text-xs font-mono text-gray-300" data-i18n="hero_float">Optics Calibrated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Summary -->
+    <section class="py-20 relative border-t border-white/5 bg-brand-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text side -->
+                <div class="order-2 lg:order-1">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="about_title">About Us</h2>
+                    <p class="text-brand-blue font-semibold mb-6 text-sm uppercase tracking-widest leading-relaxed"
+                        data-i18n="about_sub">Our Story: Bridging the Gap Between AI Hardware and Human Vision</p>
+
+                    <div class="space-y-6 text-brand-slate leading-relaxed text-sm md:text-base">
+                        <p data-i18n="about_p1_body">At see you AI, we believe that the most advanced technology
+                            shouldn't
+                            feel like a cold piece of hardware—it should feel like an extension of yourself. Our name
+                            carries a dual promise:</p>
+
+                        <p class="italic text-gray-400 border-l-2 border-brand-blue pl-4 py-2"
+                            data-i18n="about_p2_body1">As the AI wearable revolution of 2026 unfolds, a significant gap
+                            has emerged. While tech giants are perfecting the chips and sensors of AI glasses and smart
+                            rings, the "human" side is often overlooked.</p>
+
+                        <p data-i18n="about_p4_body">Based on the pillars of Vision and Precision, see you AI is
+                            dedicated to
+                            the belief that technology should adapt to the user, not the other way around. Whether you
+                            are a startup equipping your first team or a Fortune 500 company scaling a global AI
+                            deployment, we are here to make sure you See the Future Clearly.</p>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="about.html"
+                            class="inline-flex items-center gap-2 text-brand-blue hover:text-white transition-colors uppercase text-sm font-semibold tracking-wider border border-brand-blue/30 rounded-full px-6 py-2.5 hover:bg-brand-blue/10">
+                            <span data-i18n="btn_learn_more">Learn More</span>
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image side -->
+                <div class="relative order-1 lg:order-2">
+                    <div class="absolute inset-0 bg-brand-blue/20 blur-3xl rounded-full"></div>
+                    <img src="assets/images/service_fleet.jpg" alt="About Us"
+                        class="relative z-10 rounded-2xl glass-border shadow-2xl w-full object-cover h-[400px]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Summary -->
+    <section class="py-20 relative bg-black/20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="cases_title">Core Services</h2>
+                    <p class="text-brand-slate max-w-xl" data-i18n="cases_sub">Tailored AI wearable solutions driving
+                        productivity across diverse enterprise sectors.</p>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <a href="services.html"
+                        class="inline-flex items-center gap-2 text-brand-blue hover:text-white transition-colors text-sm font-semibold tracking-wider">
+                        <span data-i18n="btn_explore_all">Explore All Services</span>
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Case 1 -->
+                <a href="services.html" class="group relative rounded-2xl overflow-hidden glass-border block">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-transparent z-10 transition-opacity duration-300">
+                    </div>
+                    <img src="assets/images/use_case_logistics.png" alt="Precision Rx"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute bottom-0 left-0 p-6 z-20 w-full transform group-hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-brand-blue text-xs font-bold tracking-wider uppercase mb-2"
+                            data-i18n="services_lens_title">Precision Rx Lens Fitting</div>
+                        <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 h-0 group-hover:h-auto"
+                            data-i18n="services_lens_body">Professional optical integration for all major AI glasses.
+                        </p>
+                    </div>
+                </a>
+                <!-- Case 2 -->
+                <a href="services.html" class="group relative rounded-2xl overflow-hidden glass-border block">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-transparent z-10 transition-opacity duration-300">
+                    </div>
+                    <img src="assets/images/use_case_corporate.png" alt="Corporate Branding"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute bottom-0 left-0 p-6 z-20 w-full transform group-hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-brand-blue text-xs font-bold tracking-wider uppercase mb-2"
+                            data-i18n="services_brand_title">Corporate Branding</div>
+                        <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 h-0 group-hover:h-auto"
+                            data-i18n="services_brand_body">High-precision laser engraving and custom frame colors.</p>
+                    </div>
+                </a>
+                <!-- Case 3 -->
+                <a href="services.html" class="group relative rounded-2xl overflow-hidden glass-border block">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-transparent z-10 transition-opacity duration-300">
+                    </div>
+                    <img src="assets/images/use_case_engineering.png" alt="Fleet Maintenance"
+                        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute bottom-0 left-0 p-6 z-20 w-full transform group-hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-brand-blue text-xs font-bold tracking-wider uppercase mb-2"
+                            data-i18n="services_fleet_title">Fleet Maintenance</div>
+                        <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 h-0 group-hover:h-auto"
+                            data-i18n="services_fleet_body">Full-cycle support including bulk cleaning and calibration.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-[#080d1a] border-t border-white/10 pt-20 pb-10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+
+            <div class="flex flex-col items-center justify-center mb-16">
+                <!-- Branding -->
+                <div class="mb-8">
+                    <a href="index.html" class="text-4xl font-bold tracking-tighter text-white">see you AI</a>
+                    <p class="text-brand-slate text-sm mt-3 max-w-sm mx-auto" data-i18n="footer_slogan">Cu (See You) for
+                        Vision. Cu (Custom) for Excellence. Seeing the Future Clearly.</p>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-8 lg:gap-16">
+                    <a href="contact.html" class="flex flex-col items-center group">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 mb-4 transition-all group-hover:scale-110 group-hover:bg-brand-blue/10 group-hover:border-brand-blue/40">
+                            <svg class="w-6 h-6 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <span class="text-gray-300 text-sm font-medium group-hover:text-white transition-colors"
+                            data-i18n="footer_info1">info@cuai.ai</span>
+                    </a>
+
+                    <!-- WeChat QR / Follow us -->
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-24 h-24 bg-white/10 rounded-xl border border-white/20 flex flex-col items-center justify-center relative group mb-3">
+                            <img src="assets/images/wechat-qr.png" alt="WeChat QR"
+                                class="w-full h-full object-contain bg-white rounded-xl p-1 shadow-md">
+                        </div>
+                        <div class="text-xs text-brand-blue font-semibold uppercase tracking-wider"
+                            data-i18n="footer_scan">Scan WeChat</div>
+                        <div class="text-xs text-brand-slate mt-1 max-w-[150px]" data-i18n="footer_scan_desc">Scan to
+                            add customer service WeChat.</div>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <a href="contact.html"
+                        class="inline-flex items-center gap-2 text-white bg-white/10 hover:bg-white/20 transition-colors uppercase text-sm font-semibold tracking-wider rounded-full px-6 py-2.5 border border-white/20">
+                        <span data-i18n="btn_contact_us">Contact Us</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- legal -->
+            <div
+                class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-brand-slate">
+                <p data-i18n="footer_rights">&copy; 2026 see you AI - Enterprise Wearables. All rights reserved. <a
+                        href="http://beian.miit.gov.cn/">津ICP备2025035765号</a></p>
+                <div class="space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-brand-blue transition-colors" data-i18n="footer_privacy">Privacy
+                        Policy</a>
+                    <a href="#" class="hover:text-brand-blue transition-colors" data-i18n="footer_terms">Terms of
+                        Service</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
